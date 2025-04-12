@@ -1,0 +1,18 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .search-content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-content {
+    display: grid;
+    grid-template-columns: 410px 582px;
+    column-gap: 30px;
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+  --background: #ededed;
+  --gainsboro: #dadada;
+  --warm-grey: #848484bf;
+  --green-teal: #0ab463;
+  --white: #ffffff;
+  --black: #000;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1 {
+  font-weight: bold;
+  color: var(--black);
+  font-size: 18px;
+}
+
+h2 {
+  font-weight: bold;
+  color: var(--black);
+  font-size: 16px;
+}
+
+p {
+  font-weight: normal;
+  color: var(--black);
+  font-size: 14px;
+}

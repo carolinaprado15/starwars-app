@@ -1,0 +1,12 @@
+.card-container {
+  padding: 30px;
+  background-color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    box-shadow: 0 1px 2px 0 var(--warm-grey);
+    border: solid 1px var(--gainsboro);
+    border-radius: 4px;
+  }
+}
