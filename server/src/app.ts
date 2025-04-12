@@ -4,7 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import apiRoutes from "./api/routes/api.routes";
-
+import { genericError } from "./shared/middlewares/error.middleware";
 
 // import mongoose from "mongoose";
 
@@ -19,10 +19,7 @@ app.use(morgan("dev"));
 
 app.use("/api/v1", apiRoutes);
 
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error(err);
-  res.status(500).json({ message: "Internal Server Error" });
-});
+app.use(genericError);
 
 const PORT = 3000;
 
