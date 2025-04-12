@@ -1,21 +1,35 @@
-import { fetchResource } from "../../infra/external/swapi";
+import { fetchResource, fetchUrl } from "../../infra/external/swapi";
+import { Person, PersonDetails } from "../interfaces/people.interface";
 
-type Person = {
-  name: string;
-  gender: string;
-  birthYear: string;
-};
+const getPeople = async (name: string): Promise<Person[]> => {
+  const data = await fetchResource("/people", name);
 
-const getPeople = async (): Promise<Person[]> => {
-  const data = await fetchResource("/people/");
-
-  const people: Person[] = data.results.map((person: any) => ({
+  return data.results.map((person: any) => ({
     name: person.name,
-    gender: person.gender,
-    birthYear: person.birth_year,
+    id: person.url.split("/").slice(-2)[0],
   }));
-
-  return people;
 };
 
-export { getPeople };
+const getPersonWithMovies = async (id: number): Promise<PersonDetails> => {
+  const personData = await fetchResource(`/people/${id}`);
+
+  const films = await Promise.all(
+    personData.films.map((filmUrl: string) => fetchUrl(filmUrl))
+  );
+
+  return {
+    name: personData.name,
+    birthYear: personData.birth_year,
+    gender: personData.gender,
+    hairColor: personData.hair_color,
+    eyeColor: personData.eye_color,
+    height: personData.height,
+    mass: personData.mass,
+    movies: films.map((film) => ({
+      title: film.title,
+      id: film.url.split("/").slice(-2)[0],
+    })),
+  };
+};
+
+export { getPeople, getPersonWithMovies };

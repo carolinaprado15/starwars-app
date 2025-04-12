@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from "express";
-import { getPeople, getPersonWithMovies } from "../../domain/services/people.service";
+import { getMovies, getMovieWithPeople } from "../../domain/services/movies.service";
 
-const getPeopleHandler = async (
+const getMoviesHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const { search } = req.query;
-    const people = await getPeople(String(search));
+    const people = await getMovies(String(search));
 
     res.json(people);
   } catch (error) {
@@ -16,18 +16,18 @@ const getPeopleHandler = async (
   }
 };
 
-const getPersonHandler = async (
+const getMovieHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
     const { id } = req.params;
-    const person = await getPersonWithMovies(+id);
+    const person = await getMovieWithPeople(+id);
     res.json(person);
   } catch (error) {
     next(error);
   }
 };
 
-export { getPeopleHandler, getPersonHandler };
+export { getMoviesHandler, getMovieHandler };
