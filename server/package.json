@@ -1,0 +1,35 @@
+{
+  "name": "starwars-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bullmq": "^5.48.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.6.1",
+    "mongoose": "^8.13.2",
+    "morgan": "^1.10.0",
+    "xpress": "^2.4.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/ioredis": "^5.0.0",
+    "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.14.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
