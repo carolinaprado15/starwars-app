@@ -1,12 +1,14 @@
 import { fetchResource, fetchUrl } from "../../infra/external/swapi";
-import { Person, PersonDetails } from "../interfaces/people.interface";
+import { PersonDetails } from "../interfaces/people.interface";
+import { Resource } from "../interfaces/resource.interface";
 
-const getPeople = async (name: string): Promise<Person[]> => {
+const getPeople = async (name: string): Promise<Resource[]> => {
   const data = await fetchResource("/people", name);
 
   return data.results.map((person: any) => ({
-    name: person.name,
+    label: person.name,
     id: person.url.split("/").slice(-2)[0],
+    type: "people"
   }));
 };
 
@@ -26,8 +28,9 @@ const getPersonWithMovies = async (id: number): Promise<PersonDetails> => {
     height: personData.height,
     mass: personData.mass,
     movies: films.map((film) => ({
-      title: film.title,
+      label: film.title,
       id: film.url.split("/").slice(-2)[0],
+      type: "movies"
     })),
   };
 };

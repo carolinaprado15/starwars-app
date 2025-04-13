@@ -1,9 +1,4 @@
-import { Movie } from "./movies.interface";
-
-export interface Person {
-  name: string;
-  id: number;
-}
+import { Resource } from "./resource.interface";
 
 export interface PersonDetails {
   name: string;
@@ -13,5 +8,5 @@ export interface PersonDetails {
   eyeColor: string;
   height: number;
   mass: number;
-  movies: Movie[];
+  movies: Resource[];
 }
