@@ -1,8 +1,8 @@
 import { fetchResource, fetchUrl } from "../../infra/external/swapi";
-import { PersonDetails } from "../interfaces/people.interface";
-import { Resource } from "../interfaces/resource.interface";
+import { IPersonDetails } from "../interfaces/people.interface";
+import { IResource } from "../interfaces/resource.interface";
 
-const getPeople = async (name: string): Promise<Resource[]> => {
+const getPeople = async (name: string): Promise<IResource[]> => {
   const data = await fetchResource("/people", name);
 
   return data.results.map((person: any) => ({
@@ -12,7 +12,7 @@ const getPeople = async (name: string): Promise<Resource[]> => {
   }));
 };
 
-const getPersonWithMovies = async (id: number): Promise<PersonDetails> => {
+const getPersonWithMovies = async (id: number): Promise<IPersonDetails> => {
   const personData = await fetchResource(`/people/${id}`);
 
   const films = await Promise.all(

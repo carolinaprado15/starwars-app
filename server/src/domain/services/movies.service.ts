@@ -1,8 +1,8 @@
 import { fetchResource, fetchUrl } from "../../infra/external/swapi";
-import { MovieDetails } from "../interfaces/movies.interface";
-import { Resource } from "../interfaces/resource.interface";
+import { IMovieDetails } from "../interfaces/movies.interface";
+import { IResource } from "../interfaces/resource.interface";
 
-const getMovies = async (title?: string): Promise<Resource[]> => {
+const getMovies = async (title?: string): Promise<IResource[]> => {
   const data = await fetchResource("/films", title);
 
   return data.results.map((film: any) => ({
@@ -12,7 +12,7 @@ const getMovies = async (title?: string): Promise<Resource[]> => {
   }));
 };
 
-const getMovieWithPeople = async (id: number): Promise<MovieDetails> => {
+const getMovieWithPeople = async (id: number): Promise<IMovieDetails> => {
   const movieData = await fetchResource(`/films/${id}`);
 
   const characters = await Promise.all(
@@ -20,7 +20,7 @@ const getMovieWithPeople = async (id: number): Promise<MovieDetails> => {
   );
 
   return {
-    title: movieData.name,
+    title: movieData.title,
     openingCrawl: movieData.opening_crawl,
     people: characters.map((character) => ({
       label: character.name,

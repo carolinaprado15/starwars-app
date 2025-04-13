@@ -1,7 +1,7 @@
-import { Resource } from "./resource.interface";
+import { IResource } from "./resource.interface";
 
-export interface MovieDetails {
+export interface IMovieDetails {
   title: string;
   openingCrawl: string;
-  people: Resource[]
+  people: IResource[]
 }

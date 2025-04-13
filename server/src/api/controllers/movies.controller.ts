@@ -24,6 +24,7 @@ const getMovieHandler = async (
   try {
     const { id } = req.params;
     const person = await getMovieWithPeople(+id);
+    
     res.json(person);
   } catch (error) {
     next(error);

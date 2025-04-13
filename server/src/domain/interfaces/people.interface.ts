@@ -1,6 +1,6 @@
-import { Resource } from "./resource.interface";
+import { IResource } from "./resource.interface";
 
-export interface PersonDetails {
+export interface IPersonDetails {
   name: string;
   birthYear: string;
   gender: string;
@@ -8,5 +8,5 @@ export interface PersonDetails {
   eyeColor: string;
   height: number;
   mass: number;
-  movies: Resource[];
+  movies: IResource[];
 }
