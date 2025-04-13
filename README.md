@@ -7,6 +7,7 @@ To run this application, you'll need Docker and Docker Compose installed on your
 1. Run the following command to build and start all services:
   ```bash
   docker compose up --build
+  ```
 
 2. Access your browser on http://localhost:5173
 

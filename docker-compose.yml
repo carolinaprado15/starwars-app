@@ -22,7 +22,7 @@ services:
       - /app/node_modules
     depends_on:
       - mongodb
-      # - redis
+      - redis
     networks:
       - app-network
 
