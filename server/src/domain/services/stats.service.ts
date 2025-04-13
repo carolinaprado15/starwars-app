@@ -4,7 +4,7 @@ import { IStats, QueryStats } from "../../infra/db/models/stats.model";
 const getLatestStats = async () => {
   const stats = await QueryStats.findOne();
   if (!stats) {
-    throw new Error("No stats found.");
+    throw { code: 404, message: "No stats found." };
   }
 
   return {

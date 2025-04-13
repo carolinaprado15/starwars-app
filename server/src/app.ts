@@ -3,8 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import apiRoutes from "./api/routes/api.routes";
-import { genericError } from "./shared/middlewares/error.middleware";
-import { logQuery } from "./shared/middlewares/logQuery.middleware";
+import { errorHandler } from "./shared/middlewares/error.middleware";
 import { connectMongoDB } from "./infra/db/mongoDB";
 import { statsWorker } from "./infra/queue/workers/stats.worker";
 import { scheduleStatsJob } from "./infra/scheduler/stats.cron";
@@ -21,11 +20,9 @@ app.use(morgan("dev"));
 statsWorker;
 scheduleStatsJob();
 
-app.use(logQuery);
-
 app.use("/api/v1", apiRoutes);
 
-app.use(genericError);
+app.use(errorHandler);
 
 const PORT = 3000;
 
