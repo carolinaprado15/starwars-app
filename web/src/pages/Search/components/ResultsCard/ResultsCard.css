@@ -1,0 +1,8 @@
+.card-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--pinkish-grey);
+}
+
+.results-back-button {
+  margin-top: auto;
+}

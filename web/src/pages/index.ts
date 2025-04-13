@@ -1,3 +1,3 @@
-export { Search } from "./search/Search";
-export { Person } from "./person/Person";
-export { Movie } from "./movie/Movie";
+export { Search } from "./Search/Search";
+export { Person } from "./Person/Person";
+export { Movie } from "./Movie/Movie";

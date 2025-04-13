@@ -1,0 +1,21 @@
+.card-container {
+  --card-padding: 30px;
+  background-color: var(--white);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    box-shadow: 0 1px 2px 0 var(--warm-grey-rgb);
+    border: solid 1px var(--gainsboro);
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .card-container {
+    height: calc(100vh - 51px - (var(--card-padding) * 2)) !important;
+  }
+}
