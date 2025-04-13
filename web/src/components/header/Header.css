@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-h2 {
+.header-container > h2 {
   color: var(--green-teal);
   font-size: 18px;
 }

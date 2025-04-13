@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  border-bottom: 1px solid var(--pinkish-grey);
+}
+
+@media (max-width: 1023px) {
+  .item {
+    display: block;
+    height: auto;
+  }
+
+  .item>p {
+    margin-top: 20px;
+  }
+
+  .item>button {
+    margin: 20px 0
+  }
+}

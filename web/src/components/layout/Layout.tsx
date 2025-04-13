@@ -1,6 +1,6 @@
 import './Layout.css';
-import { AppRouter } from "../../routes/AppRouter"
-import { Header } from "../header"
+import { Header } from '..';
+import { AppRouter } from '../../routes';
 
 const Layout = () => {
   return (

@@ -1,0 +1,12 @@
+.empty {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty > .text > p {
+  color: var(--pinkish-grey);
+  margin-bottom: 5px;
+}

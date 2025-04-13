@@ -1,10 +1,14 @@
 :root {
   --background: #ededed;
   --gainsboro: #dadada;
-  --warm-grey: #848484bf;
+  --pinkish-grey: #c4c4c4;
+  --warm-grey-rgb: rgba(132, 132, 132, 0.75);
+  --dark-grey: #383838;
   --green-teal: #0ab463;
+  --darker-green-teal: #0a9954;
   --white: #ffffff;
   --black: #000;
+  --emerald: #0094ff;
 }
 
 * {
@@ -20,11 +24,37 @@ h1 {
 h2 {
   font-weight: bold;
   color: var(--black);
-  font-size: 16px;
+  font-size: 18px;
 }
 
-p {
+p, label {
   font-weight: normal;
   color: var(--black);
   font-size: 14px;
 }
+
+a {
+  color: var(--emerald)
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.-bold {
+  font-weight: bold !important;
+}
+
+.-small {
+  font-size: 14px !important;
+}
+
+.-regular {
+  font-size: 16px !important;
+}
+

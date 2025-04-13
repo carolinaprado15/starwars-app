@@ -1,17 +1,14 @@
+import { usePlatform } from "../../hooks/usePlatform";
 import "./Search.css";
-import { Card } from "../../components/card";
+import { ResultsCard, SearchCard } from "./components";
 
 const Search = () => {
+  const platform = usePlatform();
+
   return (
-    <div className="search-container">
-      <div className="search-content">
-      <Card>
-        oi
-      </Card>
-      <Card>
-        oi
-      </Card>
-      </div>
+    <div className="search-content">
+      <SearchCard />
+      {platform == "desktop" && <ResultsCard />}
     </div>
   )
 }
