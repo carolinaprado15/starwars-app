@@ -11,5 +11,5 @@ To run this application, you'll need Docker and Docker Compose installed on your
 
 2. Access your browser on http://localhost:5173
 
-3. Query stats are available on http://localhost:3000/stats
+3. Query stats are available on http://localhost:3000/api/v1/stats
 
