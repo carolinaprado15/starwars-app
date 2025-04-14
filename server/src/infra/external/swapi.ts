@@ -1,8 +1,10 @@
 import axios from "axios";
+import { Agent } from "https";
 
 const swapiClient = axios.create({
   baseURL: "https://swapi.dev/api",
   timeout: 10000,
+  httpsAgent: new Agent({ rejectUnauthorized: false })
 });
 
 const fetchResource = async (resource: string, query?: string) => {
