@@ -13,3 +13,5 @@ To run this application, you'll need Docker and Docker Compose installed on your
 
 3. Query stats are available on http://localhost:3000/api/v1/stats
 
+4. You can also see the stats by pressing the "escape" key when navigating the web app
+
