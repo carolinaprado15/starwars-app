@@ -23,3 +23,8 @@ export const searchMovies = async (query: string) => {
   const response = await api.get(`/movies?search=${query}`);
   return response.data;
 };
+
+export const getStats = async () => {
+  const response = await api.get(`/stats`);
+  return response.data;
+};

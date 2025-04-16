@@ -12,11 +12,11 @@ const ResultsCard = () => {
   const platform = usePlatform();
   const navigate = useNavigate();
 
-  const handleRedirect = (resourceType: ResourceType, id: number) => {
+  const goToResource = (resourceType: ResourceType, id: number) => {
     navigate(`/${resourceType}/${id}`);
   };
 
-  const handleGoBack = () => {
+  const goBack = () => {
     setResourceList(null)
   }
 
@@ -30,7 +30,7 @@ const ResultsCard = () => {
 
       {
         resourceList && resourceList.length > 0 && resourceList.map(({ label, id, type }) => (
-          <Item key={id} label={label} id={id} onSeeDetails={(id) => handleRedirect(type, id)} />
+          <Item key={id} label={label} id={id} onSeeDetails={(id) => goToResource(type, id)} />
         ))
       }
 
@@ -40,13 +40,11 @@ const ResultsCard = () => {
 
       {platform == "mobile" && (
         <div className="results-back-button">
-          <Button onClick={handleGoBack}>
+          <Button onClick={goBack}>
             BACK TO SEARCH
           </Button>
         </div>
-      )
-      }
-
+      )}
     </Card>
   )
 }

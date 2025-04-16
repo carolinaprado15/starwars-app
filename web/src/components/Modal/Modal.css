@@ -1,0 +1,51 @@
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.212);
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-content.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 1023px) {
+  .modal-overlay {
+    display: flex;
+    height: 0vh;
+    width: 0vw;
+  }
+
+  .modal-overlay.open {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+
+  .modal-content>.card-container {
+    height: 100vh !important;
+    width: 100vw;
+  }
+}

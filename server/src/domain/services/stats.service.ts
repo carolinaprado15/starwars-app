@@ -56,7 +56,7 @@ const calculateTopQueries = (logs: IQueryLog[]) => {
   const topQueries = sortedQueries.map(([query, count]) => ({
     query,
     count,
-    percentage: (count / totalQueries) * 100,
+    percentage: +((count / totalQueries) * 100).toFixed(1),
   }));
 
   return topQueries;

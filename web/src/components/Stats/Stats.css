@@ -1,0 +1,51 @@
+.stats-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--pinkish-grey);
+}
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.no-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.no-stats > p {
+  color: var(--pinkish-grey) !important;
+  text-align: center;
+}
+
+h3 {
+  margin: 20px 0;
+  font-size: 16px;
+  color: var(--dark-grey);
+}
+
+.term {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 10px 0;
+}
+
+.term > h4 {
+  color: var(--dark-grey);
+  font-size: 14px !important;
+}
+
+.term > p {
+  color: var(--dark-grey);
+  font-size: 14px !important;
+}
+
+.query-details > div > span {
+  font-size: 12px;
+}
+
+span {
+  font-weight: 400 !important;
+}

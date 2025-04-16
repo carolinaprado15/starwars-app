@@ -1,6 +1,6 @@
 import { Button, Card } from "../../../../components";
 import { useApp } from "../../../../context/App/useApp";
-import { useFetchResource } from "../../../../utils/hooks/useFetchResource";
+import { useFetch } from "../../../../utils/hooks/useFetch";
 import { searchMovies, searchPeople } from "../../../../services/ApiService";
 import "./SearchCard.css";
 
@@ -14,7 +14,7 @@ const SearchCard = () => {
   } = useApp();
 
   const serviceFn = resourceType == "people" ? searchPeople : searchMovies;
-  const { loading, handleFetch } = useFetchResource(serviceFn, setResourceList);
+  const { loading, handleFetch } = useFetch(serviceFn, setResourceList);
 
   return (
     <Card>

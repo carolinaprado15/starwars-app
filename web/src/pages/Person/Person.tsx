@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Details } from "../../components"
-import { useFetchResource } from "../../utils/hooks/useFetchResource";
+import { useFetch } from "../../utils/hooks/useFetch";
 import { getPerson } from "../../services/ApiService";
 import { PersonDetails } from "../../models/PeopleModel";
 import "./Person.css";
@@ -10,13 +10,13 @@ const Person = () => {
   const { id } = useParams();
 
   const [person, setPerson] = useState<PersonDetails>({} as PersonDetails);
-  const { loading, handleFetch } = useFetchResource(getPerson, setPerson);
+  const { loading, handleFetch } = useFetch(getPerson, setPerson);
 
   useEffect(() => {
     if (id) {
       handleFetch(id);
     }
-  }, []);
+  }, [id]);
 
   return (
     <Details
